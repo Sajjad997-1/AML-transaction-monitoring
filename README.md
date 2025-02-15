@@ -1,22 +1,53 @@
+# Transaction Monitoring - Money Laundering Detection
 
-### Anti-Money Laundering Using Anomaly Detection
+This project aims to build a machine learning model for transaction monitoring, specifically to identify potential cases of money laundering. Using a dataset of transactions, the model is trained to classify each transaction as either a case of fraud (money laundering) or a normal transaction.
 
-Anti-money laundering (AML) involves identifying and preventing the concealment of illegally obtained funds. In this project, we’ll use a historical transaction dataset to train anomaly detection models that identify outliers, which could indicate suspicious activity.
+## Objective
 
-While the dataset includes a column (`SAR`) that flags actual frauds, we’ll intentionally ignore this information. This approach reflects real-world scenarios where money laundering often goes undetected, making anomaly detection a critical tool for uncovering such activities.
+The goal of this project is to create an automated system that can classify transactions based on their likelihood of being involved in fraudulent activities such as money laundering. By training a model on historical transaction data, the system can make predictions on new transactions to help detect suspicious behavior.
 
-Finally, we’ll evaluate the effectiveness of our anomaly detection models using a small subset of labeled data.
+## Dataset
 
----
+The dataset used in this project contains a variety of transaction details, including transaction amount, time, sender, receiver, and other relevant features. Each transaction is labeled as either fraudulent or normal.
 
-### Problem Type
-Anomaly Detection – Outlier Detection
+## Outputs
 
-### Unsupervised Learning with DataRobot
+After training the model and making predictions, the following output was obtained:
 
-DataRobot is highly effective at identifying patterns in datasets where a target feature is unavailable. This is known as **unsupervised modeling** in machine learning. DataRobot offers two primary modes for unsupervised learning:
+- **Fraud labelled transactions**: 41,250
+- **Normal transactions**: 9,169
 
-1. **Outlier Detection**: Identifies unusual data points that deviate significantly from the majority of the dataset.
-2. **Time Series Anomaly Detection**: Detects anomalies in time-ordered data, such as unexpected spikes or drops.
+These outputs show how many transactions were predicted to be fraudulent versus normal, helping to identify potential risks in financial systems.
 
-The choice between these modes depends on the specific use case and the nature of the data. Both approaches are powerful tools for uncovering hidden insights in the absence of labeled outcomes.
+## How to Run the Project
+
+### Requirements
+
+Before running the project, make sure to install the necessary dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Steps
+
+1. **Data Cleaning**: The dataset is cleaned by handling missing values, removing duplicates, and converting data into the appropriate format.
+2. **Data Splitting**: The dataset is split into training and test sets for model evaluation.
+3. **Model Training**: A machine learning model is trained on the dataset to predict whether a transaction is fraudulent.
+4. **Prediction**: The trained model is used to predict transaction labels on unseen data.
+
+## Key Components
+
+- **Data Preprocessing**: Code for cleaning and preparing the data before feeding it into the model.
+- **Model**: Machine learning model built to classify transactions into fraud or normal categories.
+- **Evaluation**: Evaluation metrics like accuracy, precision, recall, and F1 score to assess the model's performance.
+
+## Future Improvements
+
+- Incorporating additional features for more accurate predictions.
+- Experimenting with different machine learning algorithms to improve model performance.
+- Developing a real-time system for continuous monitoring of transactions.
+
+## License
+
+This project is open-source and available under the MIT License.
