@@ -48,6 +48,3 @@ pip install -r requirements.txt
 - Experimenting with different machine learning algorithms to improve model performance.
 - Developing a real-time system for continuous monitoring of transactions.
 
-## License
-
-This project is open-source and available under the MIT License.
